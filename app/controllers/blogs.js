@@ -1,13 +1,13 @@
-var redis       = require( LIB_DIR + 'redis' );
-var Application = require( CONTROLLER_DIR + 'application' );
+var redis       = require( LIB_DIR + '/redis' );
+var Application = require( CONTROLLER_DIR + '/application' );
 var Blog        = Model( 'Blog' );
 
 module.exports = Application.extend({
 
   init : function ( before, after ){
-    after( this.validation,       { only : [ 'create', 'update' ]});
-    after( this.unique,           { only : [ 'create', 'update' ]});
-    after( this.record_not_found, { except : [ 'new', 'create', 'index' ]});
+    after( this.validation, { only : [ 'create', 'update' ]});
+    after( this.unique,     { only : [ 'create', 'update' ]});
+    after( this.no_content, { except : [ 'new', 'create', 'index' ]});
   },
 
   'new' : function ( req, res, next ){

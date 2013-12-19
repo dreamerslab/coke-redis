@@ -1,4 +1,4 @@
-var redis = require( LIB_DIR + 'redis' );
+var redis = require( LIB_DIR + '/redis' );
 
 module.exports = {
 

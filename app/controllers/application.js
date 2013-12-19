@@ -2,7 +2,7 @@ var Class = require( 'node.class' );
 
 module.exports = Class.extend({
 
-  record_not_found : function ( err, req, res, next ){
+  no_content : function ( err, req, res, next ){
     err && LOG.error( 500, res, err );
 
     req.flash( 'flash-error', req.msg + ' not found' );
@@ -12,6 +12,7 @@ module.exports = Class.extend({
   validation : function ( err, req, res, next ){
     if( err.name && err.name == 'ValidationError' ){
       var error;
+
       for( error in err.errors ){
         req.flash( 'flash-error', err.errors[ error ].message );
       }

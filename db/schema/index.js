@@ -4,12 +4,14 @@ var Schema = function ( Schema ){
  * Module dependencies.
  * @private
  */
+  var ObjectId = Schema.ObjectId;
+
   var Models = {
 
     Blog : new Schema({
-      title      : { type : String, required : true, index : true },
-      desc       : { type : String },
-      is_public  : { type : Boolean },
+      title : { type : String, required : true, index : true },
+      desc : { type : String },
+      is_public : { type : Boolean },
       created_at : { type : Number, 'default' : Date.now },
       updated_at : { type : Number }
     })
@@ -20,7 +22,8 @@ var Schema = function ( Schema ){
     if( Models[ model ].tree.updated_at !== undefined ){
       Models[ model ].pre( 'save', function ( next ){
         this.updated_at = this.isNew?
-          this.created_at : Date.now();
+          this.created_at :
+          Date.now();
 
         next();
       });

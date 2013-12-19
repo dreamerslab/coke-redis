@@ -6,12 +6,12 @@ Example of Coke framework with Redis
 
   - [Coke framework](https://github.com/dreamerslab/coke)
   - [Redis](http://redis.io/download)
-  
+
 ## Run
 
     $ cd /path/to/your/project/dir
-    # make sure mongodb and redis are runing 
-    $ npm install -l
+    # make sure mongodb and redis are runing
+    $ npm install
     $ coke s
     $ open http://127.0.0.1:4000
 

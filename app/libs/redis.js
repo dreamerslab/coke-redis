@@ -5,7 +5,7 @@ module.exports = {
 
   _client : null,
 
-  init : function ( app ){
+  init : function ( express, app ){
 
     var port    = configs.port || '6379';
     var host    = configs.host || '127.0.0.1';

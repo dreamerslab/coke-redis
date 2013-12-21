@@ -12,6 +12,9 @@ module.exports = {
       blog.is_public = props.is_public;
 
       blog.save( function ( err, blog, count ){
+        if( err )   return callback( err );
+        if( !blog ) return callback( new Error( 'Empty posts' ));
+
         client.set( blog._id, 'saved', function ( err, r_blog ){
           callback( err, blog, count );
         });

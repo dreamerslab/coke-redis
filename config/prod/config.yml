@@ -27,10 +27,12 @@ redis:
   # optional, default: 6379
   port:
 
+cookie:
+  secret: kimjkCFGyblDTk09cga93313dc222b098ujmnhFQ
+
 session:
   # optional, default: sessions
   collection:
-  secret: 2e798a6d81f7235c10a93313dc222b5763a62ba6
 
 logs:
   - error

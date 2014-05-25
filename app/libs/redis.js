@@ -1,4 +1,4 @@
-var redis   = require( "redis" );
+var redis   = require( 'redis' );
 var configs = CONF.redis;
 
 module.exports = {
